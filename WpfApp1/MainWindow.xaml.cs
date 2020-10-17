@@ -94,7 +94,7 @@ namespace WpfApp1
 
                 var url2 = $@"https://maps.duesseldorf.de/stk/index.html?Zoom=6&UTM32={utmX},{utmY}";
                 Process.Start(url2);
-                Log($"Starting a browser process for [{lsa.NodeName}]");
+                Log($"Starting browser process for [{lsa.NodeName}]");
             }
         }
         public IEnumerable<LichtSignalAnlage> ReadCSV(string fileName)
