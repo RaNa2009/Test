@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:cef="clr-namespace:CefSharp;assembly=CefSharp.Core"
+        xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="753.2" Width="1074.1">
@@ -10,11 +13,15 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Button Grid.Row="0" x:Name="btnOne" Content="Read"  Click="BtnOne_Click" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,0,0,0" Width="105" />
         <Button Grid.Row="0" x:Name="btnTwo" Content="Coord"  Click="BtnCoord_Click" HorizontalAlignment="Left" Margin="110,0,0,0.2" Width="105" />
         <DataGrid Grid.Row="1" x:Name="unitDataGrid" IsReadOnly="True" MouseDoubleClick="DataGrid_DblClick" />
-        <TextBox Grid.Row="2" x:Name="logTextBox" ScrollViewer.CanContentScroll="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" />
+        <wpf:ChromiumWebBrowser Grid.Row="2" x:Name="Browser" Address="www.google.de">
+            
+        </wpf:ChromiumWebBrowser>
+        <TextBox Grid.Row="3" x:Name="logTextBox" ScrollViewer.CanContentScroll="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" />
     </Grid>
 </Window>
